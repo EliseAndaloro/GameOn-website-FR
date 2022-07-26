@@ -484,6 +484,15 @@ footer {
   font-size: 0.5em;
 }
 
+/* Modal success */
+#modalBodySuccess{
+  padding: 35% 10%;
+}
+
+#modalBodySuccess > button {
+  margin: 20% 50% 0% 35%;
+}
+
 @media screen and (max-width: 800px) {
   .hero-section {
     display: block;
@@ -505,7 +514,7 @@ footer {
     white-space: normal;
   }
   .hero-text {
-    width: unset;
+    width: 80%;
     font-size: 1.5rem;
   }
   .hero-img img {

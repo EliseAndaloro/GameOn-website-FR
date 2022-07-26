@@ -11,18 +11,19 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
+const modalForm = document.getElementById('modalForm');
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 // launch modal form
 function launchModal() {
-  modalbg.style.display = "block";
+  modalForm.style.display = "block";
 }
 
 // close modal form
 function closeModal() {
-  modalbg.style.display = "none";
+  modalForm.style.display = "none";
 }
 
 function checkEmail() {
@@ -107,7 +108,18 @@ function validate(e) {
     document.getElementById('success').innerHTML = "Merci votre inscription a bien été pris en compte.";
     document.getElementById('reserveForm').reset();
     closeModal();
+    launchModalSuccess();
   }else{
     return false;
   }
+}
+
+//launch modal success
+function launchModalSuccess() {
+  document.getElementById('modalSuccess').style.display = "block";
+}
+
+// close modal success
+function closeModalSuccess() {
+  document.getElementById('modalSuccess').style.display = "none";
 }

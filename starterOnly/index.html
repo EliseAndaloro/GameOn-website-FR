@@ -30,7 +30,6 @@
     </div>
   </div>
     <main>
-      <p id="success"></p>
       <div class="hero-section">
         <div class="hero-content">
           <h1 class="hero-headline">
@@ -52,8 +51,19 @@
           je m'inscris
         </button>
       </div>
-
-      <div class="bground">
+      
+      <div class="bground" id="modalSuccess">
+        <div class="content">
+          <span class="close" onclick="closeModalSuccess();"></span>
+          <div class="modal-body" id="modalBodySuccess">
+            <p id="success"></p>
+            <button class="btn-signup" onclick="closeModalSuccess()">
+              Fermer
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="bground" id="modalForm">
         <div class="content">
           <span class="close" onclick="closeModal();"></span>
           <div class="modal-body">
