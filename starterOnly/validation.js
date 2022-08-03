@@ -1,7 +1,19 @@
-// Form Validation functions
+// DOM Elements
+const emailInput = document.getElementById('email');
+const firstNameInput = document.getElementById('first');
+const lastNameInput = document.getElementById('last');
+const quantityInput = document.getElementById('quantity');
 
+// EventListners 
+emailInput.addEventListener('focusout', checkEmail);
+firstNameInput.addEventListener('focusout', checkFirstName);
+lastNameInput.addEventListener('focusout', checkLastName);
+quantityInput.addEventListener('focusout', checkQuantity);
+
+
+// Form Validation functions
 function checkEmail() {
-    let email = document.getElementById('email').value;
+    let email = emailInput.value;
     let expressionReguliere = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if(!expressionReguliere.test(email)){
       document.getElementById('errorEmail').innerHTML = "Veuillez saisir une adresse mail valide.";
@@ -12,9 +24,8 @@ function checkEmail() {
   }
   
   function checkFirstName() {
-    let firstName = document.getElementById('first');
     let regex=/^[a-zA-Z]+$/;
-    if (firstName.value.trim().length <2 || firstName.value.trim() == '' || !regex.test(firstName.value.trim())) {
+    if (firstNameInput.value.trim().length <2 || firstNameInput.value.trim() == '' || !regex.test(firstNameInput.value.trim())) {
       document.getElementById('errorFirstName').innerHTML = "Le prénom doit contenir au moins 2 caractères et ne doit pas contenir de nombre.";
       return false;
     } else {
@@ -25,9 +36,8 @@ function checkEmail() {
   }
   
   function checkLastName() {
-    let lastName = document.getElementById('last');
     let regex=/^[a-zA-Z]+$/;
-    if (lastName.value.trim().length < 2 || lastName.value.trim() == "" || !regex.test(lastName.value.trim())) {
+    if (lastNameInput.value.trim().length < 2 || lastNameInput.value.trim() == "" || !regex.test(lastNameInput.value.trim())) {
       document.getElementById('errorLastName').innerHTML = "Le nom doit contenir au moins 2 caractères et ne doit pas contenir de nombre.";
       return false;
     } else {
@@ -38,8 +48,7 @@ function checkEmail() {
   }
   
   function checkQuantity() {
-    let quantity = document.getElementById('quantity');
-    if (!Number.isInteger(parseInt(quantity.value)) || parseInt(quantity.value) <= 0) {
+    if (!Number.isInteger(parseInt(quantityInput.value)) || parseInt(quantityInput.value) < 0) {
       document.getElementById('errorQuantity').innerHTML = "Veuillez saisir une valeur numérique et supérieure ou égale à 0.";
       return false;
     } else {

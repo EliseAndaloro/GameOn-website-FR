@@ -83,7 +83,6 @@
                   id="first"
                   name="first"
                   minlength="2"
-                  onblur="return checkFirstName();"
                 /><br>
                 <p class="error" id="errorFirstName"></p>
               </div>
@@ -95,7 +94,6 @@
                   type="text"
                   id="last"
                   name="last"
-                  onblur="return checkLastName();"
                 /><br>
                 <p class="error" id="errorLastName"></p>
               </div>
@@ -107,7 +105,6 @@
                   type="email"
                   id="email"
                   name="email"
-                  onblur="checkEmail();"
                 /><br>
                 <p class="error" id="errorEmail"></p>
               </div>
@@ -125,7 +122,7 @@
               <div
                 class="formData">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" onblur="return checkQuantity();">
+                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
                 <p class="error" id="errorQuantity"></p>
               </div>
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
